@@ -124,7 +124,9 @@ def merge_info(root):
             indices = np.unique(df['img'].tolist())
             np.random.shuffle(indices)
 
-            bbox_df = bbox_df.append(df)
+            #bbox_df = bbox_df.append(df)
+            bbox_df = pd.concat([bbox_df, df], ignore_index=True)
+
 
     print('\nDone!\n')
     return bbox_df
